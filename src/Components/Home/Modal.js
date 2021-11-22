@@ -21,18 +21,15 @@ const Modal = () => {
     const [opacidadMenos, setOpacidadMenos] = useState("");
     const [checkbox, setCheckbox] = useState(0);
     const [checked, setChecked] = useState(false);
-    const [opacidadSabor, setOpacidadSabor] = useState("")
+    const [checkBoxCantidad, setCheckBoxCantidad] = useState(0);
+    
 
     useEffect(() => {
         setDatos(JSON.parse(localStorage.getItem('data')));
     }, [])
 
     const cambioColor = (contador) => {
-        if (contador < 2) {
-            setOpacidadMenos("")
-        } else if (contador > 1) {
-            setOpacidadMenos("active")
-        }
+        contador < 2 ? setOpacidadMenos("") :  setOpacidadMenos("active")
     }
 
     const handleChange = (e, precio) => {
@@ -41,15 +38,12 @@ const Modal = () => {
         setChecked(e.target.checked);
         if (state === true) {
             setCheckbox(checkbox + precio)
-            setContador(contador + 1)
+            setCheckBoxCantidad(checkBoxCantidad + 1)
         } else if (state === false) {
             setCheckbox(checkbox - precio)
-            setContador(contador - 1)
+            setCheckBoxCantidad(checkBoxCantidad - 1)
         }
     };
-
-
-
 
     return (
         <div>
@@ -64,8 +58,6 @@ const Modal = () => {
                 <Pesos>${datos.price} MXN</Pesos>
 
             </DivPintar>
-
-
 
             <DivContador>
                 <DivBotones>
@@ -82,10 +74,7 @@ const Modal = () => {
                 {
 
                     dataSabores.map((ind) => (
-                        <ImgSabores onClick={() => {
-                            setDatos(ind);
-                            opacidadSabor === "" ? setOpacidadSabor("active") : setOpacidadSabor("")
-                        }} className={opacidadSabor} key={ind.id} src={ind.flavor.imageFlavor} alt="" />
+                        <ImgSabores onClick={() => {setDatos(ind)}}key={ind.id} src={ind.flavor.imageFlavor} alt="" />
                     ))
 
                 }
@@ -94,6 +83,7 @@ const Modal = () => {
             <p>Selecciona la torta que mas te guste y disfruta de tu desayuno</p>
             <DivGuajolocombo>
                 {
+                   
                     dataGuajolocombo.map((ind) => (
                         <DivCheckbox key={ind.id}  >
                             <DivCajita>
@@ -106,10 +96,12 @@ const Modal = () => {
                             </DivImgH4P>
                         </DivCheckbox>
                     ))
+                     
                 }
+                
             </DivGuajolocombo>
             <DivBotonCarrito>
-                <ButtonCarrito>Agregar {contador} al carrito  ${datos.price * contador + checkbox}</ButtonCarrito>
+                <ButtonCarrito>Agregar {contador + checkBoxCantidad} al carrito  ${(datos.price * contador) + checkbox} MXN</ButtonCarrito>
             </DivBotonCarrito>
 
 
@@ -118,6 +110,3 @@ const Modal = () => {
 }
 
 export default Modal
-
-
-

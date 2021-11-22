@@ -39,7 +39,7 @@ export const Icono = styled(FontAwesomeIcon)`
 export const InputSearch = styled.input`
     background-color: #E7E7E7;
     font-size: 18px;
-    border-radius: 50px;
+    color: black;
     border:1px solid  #E7E7E7;
     font-family: 'Shippori Antique B1', sans-serif;
    
@@ -156,6 +156,9 @@ export const ButtonMenosContador = styled.button`
     &.active{
         opacity: 1;
     }
+    &:hover:active{
+        transform:scale(.90)
+    }
 `
 
 export const ButtonMasContador = styled.button`
@@ -164,6 +167,9 @@ export const ButtonMasContador = styled.button`
     width: 2rem;
     border: 2px solid black;
     background-color: white;
+    &:hover:active{
+        transform:scale(.90)
+    }
 `
 
 export const IconoMenos = styled(FontAwesomeIcon)`
@@ -185,6 +191,9 @@ export const ButtonCarrito = styled.button`
     font-size: 15px;
     color: #F6F6F9;
     border-radius: 50px;
+    &:hover:active{
+        transform:scale(.90)
+    }
 `
 
 export const DivBotonCarrito = styled.div`
@@ -252,9 +261,9 @@ export const ImgSabores = styled.img`
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.5;
-    &.active {
-        opacity: 1; 
+    opacity: 1;
+    &:hover:active{
+        transform:scale(.90)
     }
 `
 
@@ -266,5 +275,32 @@ export const H1NameSlider = styled.h1`
 export const H2NameSabor = styled.h2`
     font-size: 20px;
     padding: 20px 20px 5px 0;
+`
 
+export const DivInputModal = styled.div`
+    width: 80%;
+    height: 3rem;
+    border-radius: 50px;
+    background-color: #E7E7E7;
+    color: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+`
+
+export const LinkModalCancelar = styled(Link)`
+    text-decoration: none;
+    width: 20%;
+    color: black;
+    padding-left: 10px;
+`
+
+export const DivSearchs = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
 `
