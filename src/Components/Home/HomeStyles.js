@@ -60,6 +60,7 @@ export const SelectLink = styled.p`
     font-size: 1.3rem;
     font-family: 'Shippori Antique B1', sans-serif;
     cursor: pointer;
+    padding-bottom: 20px;
 
     &.active {
         color: orange;
@@ -75,15 +76,14 @@ export const DivCards = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-top: 10px;
 `
 export const LiCards = styled.li`
-    list-style: none;
     display: flex;
+    list-style: none;
     flex-direction: row;
     background-color: #FFFFFF;
-    border-radius: 30px;
-    height: 7rem;
+    border-radius: 20px;
+    height: 8rem;
 `
 
 export const Img = styled.img`
@@ -110,6 +110,7 @@ export const H1Flavor = styled.h1`
 export const LinkCards = styled(Link)`
     text-decoration: none;
     color: black;
+    margin: 0;
 `
 
 export const DivPintar = styled.div`
@@ -157,7 +158,7 @@ export const ButtonMenosContador = styled.button`
         opacity: 1;
     }
     &:hover:active{
-        transform:scale(.90)
+        transform:scale(.90);
     }
 `
 
@@ -181,8 +182,6 @@ export const IconoMas = styled(FontAwesomeIcon)`
     font-size:20px;
 `
 
-
-
 export const ButtonCarrito = styled.button`
     width: 90%;
     height: 4rem;
@@ -192,7 +191,7 @@ export const ButtonCarrito = styled.button`
     color: #F6F6F9;
     border-radius: 50px;
     &:hover:active{
-        transform:scale(.90)
+        transform:scale(.90);
     }
 `
 
@@ -263,7 +262,7 @@ export const ImgSabores = styled.img`
     justify-content: center;
     opacity: 1;
     &:hover:active{
-        transform:scale(.90)
+        transform:scale(.90);
     }
 `
 
@@ -301,6 +300,15 @@ export const DivSearchs = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;   
+`
+export const DivNoHayResultados = styled.div`
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    
+`
+
+export const LinkCarrito = styled(Link)`
+    text-decoration: none;
+    color: gray;
 `

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { DivCards, DivCarrito, DivSelects, DivText, H1Flavor, Img, LiCards, LinkCards, Parrafo, Pesos, SelectLink } from './HomeStyles'
+import { DivCards, DivCarrito, DivSelects, DivText, H1Flavor, Img, LiCards, LinkCards, LinkCarrito, Parrafo, Pesos, SelectLink } from './HomeStyles'
 import LogoPage from './LogoPage'
 import LogoCarrito from './LogoCarrito'
 import Buscador from './Buscador'
 import { urlGuajolotas, urlBebidas, urlTamales } from '../url'
+
 
 
 const Home = () => {
@@ -78,8 +79,8 @@ const Home = () => {
 
         <div>
             <DivCarrito>
-                <LogoPage />
-                <LogoCarrito />
+                <LinkCards to='/Home'><LogoPage /></LinkCards>
+                <LinkCarrito to='/Car'><LogoCarrito /></LinkCarrito>
             </DivCarrito>
             <Parrafo>Nada como una Guajolota para empezar el día</Parrafo>
             <Buscador />

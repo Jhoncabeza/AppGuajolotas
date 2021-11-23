@@ -1,14 +1,12 @@
 import { faArrowLeft, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
     ButtonCarrito, ButtonMasContador, ButtonMenosContador, CheckBoxP, DivBotonCarrito, DivBotones,
     DivCajita, DivCarrito, DivCheckbox, DivContador, DivGuajolocombo, DivImgH4P, DivPintar, DivSabores,
-    H1NameSlider,
-    H2NameSabor,
-    H4ImgP,
-    IconoMas, IconoMenos, ImageCheckBox, ImageDivPintar, ImgSabores, LinkCards, Pesos
-} from './HomeStyles'
+    H1NameSlider,H2NameSabor,H4ImgP,IconoMas, IconoMenos, ImageCheckBox, ImageDivPintar, ImgSabores, 
+    LinkCards, Pesos } from './HomeStyles'
 import LogoCarrito from './LogoCarrito'
 
 
@@ -47,16 +45,15 @@ const Modal = () => {
 
     return (
         <div>
-            <DivCarrito style={{}}>
+            <DivCarrito>
                 <LinkCards to='/Home'><FontAwesomeIcon icon={faArrowLeft} /></LinkCards>
-                <LogoCarrito />
+                <Link to='/Car'><LogoCarrito /></Link>
             </DivCarrito>
 
             <DivPintar>
                 <ImageDivPintar src={datos.image} alt="" />
                 <H1NameSlider>{datos.name}</H1NameSlider>
                 <Pesos>${datos.price} MXN</Pesos>
-
             </DivPintar>
 
             <DivContador>

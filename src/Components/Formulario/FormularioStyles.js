@@ -28,6 +28,7 @@ export const InputFormulario = styled.input`
     border-radius: 5px;
     margin: 0.5vh;
     height: 5vh;
+    width: 25vh;
 `
 
 export const ButtonFormulario = styled.button`
