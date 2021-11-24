@@ -42,9 +42,6 @@ const Modal = () => {
         }
     };
 
-    
-
-
 
     return (
         <div>
