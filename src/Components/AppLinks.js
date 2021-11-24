@@ -14,12 +14,12 @@ function AppLinks() {
     <div>
       <Router>
         <Routes>
-          <Route exact path="/"         element={<Formulario/>    }/>
-          <Route exact path="/Login"    element={<Registrarse/>   }/>
-          <Route exact path="/Home"     element={<Home/>          }/>
-          <Route exact path="/Products" element={<Modal/>         }/>
-          <Route exact path="/Search"   element={<BuscadorModal />}/>
-          <Route exact path="/Car"      element={<Carrito/>       }/>
+          <Route exact path="/" element={<Formulario />} />
+          <Route exact path="/Login" element={<Registrarse />} />
+          <Route exact path="/Home" element={<Home />} />
+          <Route exact path="/Products" element={<Modal />} />
+          <Route exact path="/Search" element={<BuscadorModal />} />
+          <Route exact path="/Car" element={<Carrito />} />
         </Routes>
       </Router>
     </div>

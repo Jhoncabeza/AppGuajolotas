@@ -17,8 +17,8 @@ const Modal = () => {
     const [datos, setDatos] = useState({});
     const [contador, setContador] = useState(1);
     const [opacidadMenos, setOpacidadMenos] = useState("");
-    const [checkbox, setCheckbox] = useState(0);
     const [checked, setChecked] = useState(false);
+    const [checkboxPrecio, setCheckboxPrecio] = useState(0);
     const [checkBoxCantidad, setCheckBoxCantidad] = useState(0);
     
 
@@ -31,23 +31,26 @@ const Modal = () => {
     }
 
     const handleChange = (e, precio) => {
-        let state = e.target.checked
-        console.log(checked)
+        let bandera = e.target.checked
         setChecked(e.target.checked);
-        if (state === true) {
-            setCheckbox(checkbox + precio)
+        if (bandera === true) {
+            setCheckboxPrecio(checkboxPrecio + precio)
             setCheckBoxCantidad(checkBoxCantidad + 1)
-        } else if (state === false) {
-            setCheckbox(checkbox - precio)
+        } else if (bandera === false) {
+            setCheckboxPrecio(checkboxPrecio - precio)
             setCheckBoxCantidad(checkBoxCantidad - 1)
         }
     };
+
+    
+
+
 
     return (
         <div>
             <DivCarrito>
                 <LinkCards to='/Home'><FontAwesomeIcon icon={faArrowLeft} /></LinkCards>
-                <Link to='/Car'><LogoCarrito /></Link>
+                <Link style={{textDecoration:"none",color:"gray"}} to='/Car'><LogoCarrito /></Link>
             </DivCarrito>
 
             <DivPintar>
@@ -77,7 +80,7 @@ const Modal = () => {
                 }
             </DivSabores>
             <H2NameSabor>Guajolocombo</H2NameSabor>
-            <p>Selecciona la torta que mas te guste y disfruta de tu desayuno</p>
+            <p>Selecciona la combinacion que mas te guste y disfruta de tu desayuno</p>
             <DivGuajolocombo>
                 {
                    
@@ -98,7 +101,7 @@ const Modal = () => {
                 
             </DivGuajolocombo>
             <DivBotonCarrito>
-                <ButtonCarrito>Agregar {contador + checkBoxCantidad} al carrito  ${(datos.price * contador) + checkbox} MXN</ButtonCarrito>
+                <ButtonCarrito onClick ={(e)=>{console.log(e)}}>Agregar {contador + checkBoxCantidad} al carrito  ${(datos.price * contador) + checkboxPrecio} MXN</ButtonCarrito>
             </DivBotonCarrito>
 
 

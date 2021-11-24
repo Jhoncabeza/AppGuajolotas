@@ -71,7 +71,7 @@ export const DivSelects = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-` 
+`
 export const DivCards = styled.div`
     display: flex;
     flex-direction: column;
@@ -190,6 +190,10 @@ export const ButtonCarrito = styled.button`
     font-size: 15px;
     color: #F6F6F9;
     border-radius: 50px;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    left: 1;
     &:hover:active{
         transform:scale(.90);
     }
@@ -200,6 +204,7 @@ export const DivBotonCarrito = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-top: 3rem;
 `
 
 export const DivGuajolocombo = styled.div`
@@ -223,7 +228,7 @@ export const ImageCheckBox = styled.img`
     height: 5rem;
     
 `
-export const DivCajita= styled.div`
+export const DivCajita = styled.div`
     display: flex;
     justify-content: flex-end;
 `
@@ -295,20 +300,121 @@ export const LinkModalCancelar = styled(Link)`
     color: black;
     padding-left: 10px;
 `
-
 export const DivSearchs = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;   
+    align-items: center;  
 `
+
+//carrito
 export const DivNoHayResultados = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 8rem;
 `
-
 export const LinkCarrito = styled(Link)`
     text-decoration: none;
     color: gray;
+`
+export const DivImagenNoHayProductos = styled.div`
+    width: 10rem;
+    height: 10rem;
+`
+export const DivImagenCarrito = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;    
+`
+export const ImagenNoHayProductos = styled.img`
+    width: 10rem;
+    height: 10rem;
+`
+export const H5NoHayProductos = styled.h5`
+    width: 100%;
+    text-align: center;
+    padding-left: 0.5rem;
+    font-size: 19px;
+`
+export const LinkAtras = styled(Link)`
+    width: 2rem;
+    height: 2rem;
+`
+export const ImgAtras = styled.img`
+    width: 2rem;
+    height: 2rem;
+`
+export const DivContainerFlechaCarrito = styled.div`
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    margin-top: 3rem;
+`
+export const DivFlechitaAtras = styled.div`
+    width:10%;
+`
+export const DivTituloCarrito = styled.div`
+    width: 90%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+`
+export const DivPintarDataCarrito = styled.div`
+    width:100%;
+    height: 100%;
+`
+export const ImgPintarDataCarrito = styled.img`
+    width: 4rem;
+    height: 4rem;
+`
+export const H6TituloPintarData=styled.h6`
+    font-size: 13px;
+` 
+export const DivH6P = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+export const DivTodo = styled.div`
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.1rem; 
+`
+export const H4PintarCarrito = styled.h4`
+    color: #FA4A0C;
+`
+export const DivH4PintarCarrito = styled.div`
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:flex-end ;
+`
+export const DivTotalCarrito = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    height: 4rem;
+`
+export const H1TotalCarrito = styled.h1`
+    font-size: 20px;
+    padding-left: 5%;
+`
+
+export const H1PrecioTotalCarrito = styled.h1`
+    font-size: 20px;
+    padding-right: 5%;
+    color: #FA4A0C;
 `

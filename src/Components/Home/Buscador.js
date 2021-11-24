@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Buscador = () => {
     return (
         <DivInput>
-            <Link to="/Search"><Icono icon={faSearch} /><InputSearch type="text" /*value={search} onChange={handleSearch} */placeholder=" Sabor de guajolota,bebida..."/></Link>
+            <Link to="/Search"><Icono icon={faSearch} /><InputSearch type="text" placeholder=" Sabor de guajolota,bebida..."/></Link>
         </DivInput>
     )
 }

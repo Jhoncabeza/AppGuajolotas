@@ -23,10 +23,6 @@ const BuscadorModal = () => {
     const [search, setSearch] = useState("");
     const [result, setResult] = useState([busqueda]);
 
-    console.log(result)
-    console.log(search)
-
-
     useEffect(() => {
         handleFetch(url)
         // eslint-disable-next-line react-hooks/exhaustive-deps
