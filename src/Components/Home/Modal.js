@@ -48,6 +48,7 @@ const Modal = () => {
         let newCart = [...shoppingCart]
         let indexFound = newCart.findIndex((element) => element.id === ind.id)
         newCart = newCart.filter((element, index) => index !== indexFound)
+        
         setShoppingCart(newCart)
     }
 
