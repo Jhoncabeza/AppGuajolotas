@@ -37,7 +37,6 @@ const Carrito = () => {
                 </DivTituloCarrito>
             </DivContainerFlechaCarrito>
 
-
             {
                 datas === noHayProductos ?
                     <DivImagenCarrito>

@@ -18,38 +18,37 @@ const Modal = () => {
     const [datos, setDatos] = useState({});
     const [contador, setContador] = useState(1);
     const [opacidadMenos, setOpacidadMenos] = useState("");
-
     const [checked, setChecked] = useState(false);
     const [checkboxPrecio, setCheckboxPrecio] = useState(0);
     const [checkBoxCantidad, setCheckBoxCantidad] = useState(0);
     const [shoppingCart, setShoppingCart] = useState([]);
     let contadorCarrito = contador;
     let dataElementoElegido = datos;
-
+    console.log(checked)
     useEffect(() => {
         setDatos(JSON.parse(localStorage.getItem('data')));
-    },[])
+    }, [])
 
     const cambioColor = (contador) => {
         contador < 2 ? setOpacidadMenos("") : setOpacidadMenos("active")
     }
 
-    
-    const addChange = (precio,ind) => {
+
+    const addChange = (precio, ind) => {
         setCheckboxPrecio(checkboxPrecio + precio);
         setCheckBoxCantidad(checkBoxCantidad + 1);
         let newCart = [...shoppingCart]
         newCart.push(ind)
-        setShoppingCart(newCart)        
+        setShoppingCart(newCart)
     }
-    
-    const deleteChange = (precio,ind) => {
+
+    const deleteChange = (precio, ind) => {
         setCheckboxPrecio(checkboxPrecio - precio);
         setCheckBoxCantidad(checkBoxCantidad - 1);
         let newCart = [...shoppingCart]
         let indexFound = newCart.findIndex((element) => element.id === ind.id)
         newCart = newCart.filter((element, index) => index !== indexFound)
-        setShoppingCart(newCart)   
+        setShoppingCart(newCart)
     }
 
     const handleChange = (e, precio, ind) => {
@@ -57,9 +56,9 @@ const Modal = () => {
         setChecked(e.target.checked);
         if (bandera !== undefined) {
             bandera ?
-            addChange(precio,ind)
-            :
-            deleteChange(precio,ind)
+                addChange(precio, ind)
+                :
+                deleteChange(precio, ind)
         }
     };
 
@@ -67,10 +66,10 @@ const Modal = () => {
         await fetch('https://datasprint2.herokuapp.com/carrito', {
             method: 'POST',
             body: JSON.stringify({
-                "contador":contadorCarrito,
-                "dataElegido":dataElementoElegido,
-                "checkbox":shoppingCart,
-                "total":(datos.price * contador) + checkboxPrecio
+                "contador": contadorCarrito,
+                "dataElegido": dataElementoElegido,
+                "checkbox": shoppingCart,
+                "total": (datos.price * contador) + checkboxPrecio
 
             }),
             headers: {
