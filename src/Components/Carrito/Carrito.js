@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { ButtonCarrito, DivBotonCarrito, DivContainerFlechaCarrito, DivFlechitaAtras, DivH4PintarCarrito, DivH6P, DivImagenCarrito, DivImagenNoHayProductos, DivPintarDataCarrito, DivTituloCarrito, DivTodo, DivTotalCarrito, H1PrecioTotalCarrito, H1TotalCarrito, H4PintarCarrito, H5NoHayProductos, H6TituloPintarData, ImagenNoHayProductos, ImgAtras, ImgPintarDataCarrito, LinkAtras } from '../Home/HomeStyles'
+import {
+    ButtonCarrito, DivBotonCarrito, DivContainerFlechaCarrito, DivFlechitaAtras,
+    DivH4PintarCarrito, DivH6P, DivPintarDataCarrito, DivTituloCarrito, DivTodo, DivTotalCarrito,
+    H1PrecioTotalCarrito, H1TotalCarrito, H4PintarCarrito, H6TituloPintarData, ImgAtras,
+    ImgPintarDataCarrito, LinkAtras
+} from '../Home/HomeStyles'
+import NoHayProductos from './NoHayProductos'
 
-let noHayProductos = {
-    "nombre": "No hay productos",
-    "imagen": "https://res.cloudinary.com/dxgmhyliz/image/upload/v1637708981/Sprint_2/logo/Group_exs6pv.png"
-}
 let url = "https://datasprint2.herokuapp.com/carrito"
 
 const Carrito = () => {
 
-    const [datas, setDatas] = useState(noHayProductos)
+    const [datas, setDatas] = useState([])
+
+    useEffect(() => {
+        getSearch(url)
+    }, [])
 
     const getSearch = async (url) => {
         let response = await fetch(url);
         let data = await response.json();
         setDatas(data)
-        
     }
-     
-    useEffect(() => {
-        getSearch(url)
-    }, [])
 
-   
-    
-    
     return (
 
         <div>
@@ -38,15 +36,9 @@ const Carrito = () => {
             </DivContainerFlechaCarrito>
 
             {
-                datas === noHayProductos ?
-                    <DivImagenCarrito>
-                        <DivImagenNoHayProductos>
-                            <ImagenNoHayProductos src={noHayProductos.imagen} alt="" />
-                        </DivImagenNoHayProductos>
-                        <H5NoHayProductos>{noHayProductos.nombre}</H5NoHayProductos>
-                    </DivImagenCarrito>
+                datas.length <= 0 ?
+                    <NoHayProductos />
                     :
-
                     <DivPintarDataCarrito>
                         <DivTodo>
                             <ImgPintarDataCarrito src={datas[0].dataElegido.image} alt="" />
@@ -78,14 +70,15 @@ const Carrito = () => {
                             <H1TotalCarrito>Total</H1TotalCarrito>
                             <H1PrecioTotalCarrito>${datas[0].total} MXN</H1PrecioTotalCarrito>
                         </DivTotalCarrito>
-                    </DivPintarDataCarrito>
+                        <DivBotonCarrito>
+                            <ButtonCarrito>Pagar</ButtonCarrito>
+                        </DivBotonCarrito>
 
+                    </DivPintarDataCarrito>
 
             }
 
-            <DivBotonCarrito>
-                <ButtonCarrito >Pagar</ButtonCarrito>
-            </DivBotonCarrito>
+
         </div >
     )
 }
